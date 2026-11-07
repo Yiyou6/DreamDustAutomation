@@ -141,12 +141,31 @@ internal static class NightReactionsTests
         foreach (var operation in new[] { Operation.Extract, Operation.Synthesize, Operation.BoilDry, Operation.React })
         foreach (int modules in new[] { 0, 4 })
         {
+            int target = operation == Operation.Extract ? 45 : operation == Operation.Synthesize ? 52 : 160;
+            var action = new BatchAction(operation, amount: 420, targetTemperature: target)
+                { precursorId = operation == Operation.Extract ? "dream_cap_mush" : "dream_cap_extract" };
             var batch = new RunningBatch { heaterUpgrades = modules, plan = new BatchPlan {
-                actions = new[] { new BatchAction(operation, amount: 420, targetTemperature: operation == Operation.Synthesize ? 52 : 125) } } };
-            var tank = Mix("water", 300000, "alcohol", 60000, "protein", 3000, "acid", 3000, "dream_cap_extract", 10000, "reducing_agent", 10000, "lipobond_agent", 3000);
+                productId = operation == Operation.Synthesize ? "pink_alt_injector" : "dream_dust",
+                directForm = operation == Operation.BoilDry, actions = new[] { action } } };
+            var tank = operation == Operation.Extract ? Mix("dream_cap_mush", 10000, "alcohol", 60000, "water", 300000) :
+                operation == Operation.BoilDry ? Mix("water", 300000, "starch", 10000) :
+                Mix("water", 300000, "protein", 3000, "acid", 3000, "dream_cap_extract", 10000, "reducing_agent", 10000, "lipobond_agent", 3000);
             var buffer = Mix("coffee_mush", 30000, "water", 5000);
             var manual = new SimulationItem(tank); var manualBuffer = new SimulationItem(buffer);
-            for (int second = 0; second < 420; second++) DaySecond(batch, manual, manualBuffer);
+            if (operation == Operation.BoilDry && modules == 0)
+            {
+                bool refused = false;
+                try { NightReactions.CompleteStep(batch, tank, buffer); } catch (MachineFault) { refused = true; }
+                Check(refused && batch.step == 0 && WaterHelper.IsWet(tank), "unavailable heater silently dried water");
+                continue;
+            }
+            int ticks = 0;
+            while (operation == Operation.React ? ticks < 420 : operation == Operation.BoilDry ?
+                ChemistryOperations.VolatileVolume(manual) > 0 : ChemistryOperations.Amount(manual, action.precursorId) > 0)
+            {
+                Check(++ticks <= 900, "manual endpoint fixture stalled");
+                DaySecond(batch, manual, manualBuffer);
+            }
             batch.elapsed = 0; NightReactions.CompleteStep(batch, tank, buffer);
             Check(ChemistryOperations.Parts(tank).SequenceEqual(ChemistryOperations.Parts(manual)) &&
                 ChemistryOperations.Parts(buffer).SequenceEqual(ChemistryOperations.Parts(manualBuffer)), "step chemistry mismatch: " + operation);

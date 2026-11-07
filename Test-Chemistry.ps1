@@ -7,7 +7,7 @@ New-Item -ItemType Directory -Path $testRoot -Force | Out-Null
 
 # Read-only access to the installed game. A test-only copy replaces localization
 # text lookups so the game's numerical methods can run without a Unity scene.
-# No chemistry or sprite methods are patched; a leaked rendering call still fails.
+# Numerical chemistry is unchanged; native UI color parsing is isolated below.
 [void][Reflection.Assembly]::LoadFrom((Join-Path $managed 'DseCecil.dll'))
 $resolver = [DseCecil.DefaultAssemblyResolver]::new()
 $resolver.AddSearchDirectory($managed)
@@ -22,6 +22,20 @@ try {
         $method.Body.Variables.Clear()
         $il = $method.Body.GetILProcessor()
         $il.Append($il.Create([DseCecil.Cil.OpCodes]::Ldstr, '[headless localization]'))
+        $il.Append($il.Create([DseCecil.Cil.OpCodes]::Ret))
+    }
+    # New game builds initialize hopper UI colors through a Unity native call.
+    # Colors are irrelevant to headless inventory tests; keep chemistry intact.
+    $hopper = $fixture.MainModule.Types | Where-Object FullName -eq 'HopperHelper'
+    foreach ($method in $hopper.Methods | Where-Object { $_.HasBody -and $_.Name -eq 'Swatch' -and $_.ReturnType.IsValueType }) {
+        $method.Body.Instructions.Clear(); $method.Body.ExceptionHandlers.Clear(); $method.Body.Variables.Clear()
+        $method.Body.InitLocals = $true
+        $color = [DseCecil.Cil.VariableDefinition]::new($method.ReturnType)
+        $method.Body.Variables.Add($color)
+        $il = $method.Body.GetILProcessor()
+        $il.Append($il.Create([DseCecil.Cil.OpCodes]::Ldloca, $color))
+        $il.Append($il.Create([DseCecil.Cil.OpCodes]::Initobj, $method.ReturnType))
+        $il.Append($il.Create([DseCecil.Cil.OpCodes]::Ldloc, $color))
         $il.Append($il.Create([DseCecil.Cil.OpCodes]::Ret))
     }
     $fixture.Write((Join-Path $testRoot 'Assembly-CSharp.dll'))
@@ -64,6 +78,8 @@ $sources += @(Get-Item (Join-Path $taskRoot 'tests/MaterialCatalogTests.cs'))
 $sources += @(Get-Item (Join-Path $taskRoot 'tests/ProteinCleanupTests.cs'))
 $sources += @(Get-Item (Join-Path $taskRoot 'tests/OvernightFeedbackTests.cs'))
 $sources += @(Get-Item (Join-Path $taskRoot 'tests/SourceStabilityTests.cs'))
+$sources += @(Get-Item (Join-Path $taskRoot 'tests/ReactionEndpointTests.cs'))
+$sources += @(Get-Item (Join-Path $taskRoot 'tests/TargetGradeDilutionTests.cs'))
 foreach ($source in $sources) { $trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText([IO.File]::ReadAllText($source.FullName))) }
 $controllerSource = [IO.File]::ReadAllText((Join-Path $taskRoot 'src/MachineController.cs'))
 $controllerTree = [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText($controllerSource)

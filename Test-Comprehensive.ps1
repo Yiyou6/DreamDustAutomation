@@ -4,7 +4,7 @@ $results = Join-Path $PSScriptRoot 'TestResults/comprehensive'
 New-Item -ItemType Directory -Path $results -Force | Out-Null
 $jobs = @()
 if ($Group -in @('All','Chemistry')) {
-    foreach ($suite in @('ChemistryRegressionTests','ExpandedControllerTests','PairwiseControllerTests','SaveMutationTests','MaterialCatalogTests','ProteinCleanupTests','OvernightFeedbackTests','SourceStabilityTests')) {
+    foreach ($suite in @('ChemistryRegressionTests','ExpandedControllerTests','PairwiseControllerTests','SaveMutationTests','MaterialCatalogTests','ProteinCleanupTests','OvernightFeedbackTests','SourceStabilityTests','ReactionEndpointTests','TargetGradeDilutionTests')) {
         $jobs += @{name=$suite;script='Test-Chemistry.ps1';arguments=@('-Suite',$suite)}
     }
 }

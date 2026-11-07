@@ -126,6 +126,7 @@ namespace DreamDustAutomation.Planning
                 plan.requestedBottles < 0 || (plan.requestedBottles > 0 && (plan.requestedBottles != plan.expectedBottles || plan.availableBottles < plan.requestedBottles)) ||
                 batch.blenderLoss < 0 || batch.blenderLoss > 100 || batch.finisherLoss < 0 || batch.finisherLoss > 100 || batch.heaterUpgrades < 0 ||
                 !AlcoholBudget.Percentages.Contains(plan.alcoholPercent) || plan.extractionAlcohol < 0 || plan.extractionPortions < 0 ||
+                plan.dilutionVolume < 0 || plan.dilutionVolume > plan.reagents ||
                 (plan.directForm ? plan.schema != 3 || plan.requestedGrade != 0 || plan.actualGrade != 0 :
                     !GradePolicy.Grades.Contains(plan.requestedGrade) || !GradePolicy.Grades.Contains(plan.actualGrade) || plan.actualGrade > plan.requestedGrade) ||
                 (!ChemicalRecipe.Ids.Contains(plan.productId) && !(plan.schema == 1 && string.IsNullOrEmpty(plan.productId))))

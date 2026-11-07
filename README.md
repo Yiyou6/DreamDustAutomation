@@ -1,12 +1,14 @@
 # 全自动制毒机 · DreamDustAutomation
 
-《深空当铺 / Probably Stolen》的自动化学制造模组。当前源码版本：**0.3.61-beta**。
+《深空当铺 / Probably Stolen》的自动化学制造模组。当前源码版本：**0.3.62-beta**。
 
 [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830572817)
 
 把材料放进统一投料仓，选择药物、浓度与数量，机器根据本批材料和设备升级规划加工。内部使用原版搅拌器、加热板、蒸发器和成型机，按原版规则计算产量、损耗与消耗。
 
 ## 功能
+
+0.3.62：跨天与白天加热均检查实际反应终点；可恢复旧版“尚未蒸干”导致的装药停机。已有高纯药料选择较低档位时，会尝试按需添加酸或碱，并在预览中显示用量及实际浓度。
 
 - 七种原版药物；正常制药与“只做假药”两种模式。
 - 浓度分档、数量选择、分批萃取，以及加热或蒸发路线。
@@ -57,7 +59,7 @@ pwsh -NoProfile -File ./Test-Chemistry.ps1 -Suite SaveMutationTests
 pwsh -NoProfile -File ./Test-Feedback.ps1
 ```
 
-测试结果写入 `TestResults/`。化学测试使用本机原版数值逻辑，并在测试副本中替换本地化查询；不会修改游戏安装文件。请依次运行化学测试，避免同时写入共享测试目录。
+测试结果写入 `TestResults/`。化学测试使用本机原版数值逻辑，并在测试副本中替换本地化查询与进料斗界面颜色解析；不会修改游戏安装文件。请依次运行化学测试，避免同时写入共享测试目录。
 
 `Test-Layout.ps1`、`Test-DragVisual.ps1`、`Test-Power.ps1`、`Test-Stock.ps1`、`Test-Starter.ps1` 还依赖开发者本地 `research/` 中的原版代码分析文件。这些文件未随仓库分发，因此完整 `Test-Comprehensive.ps1` 的 Interface/World 组需要额外的本地准备。Chemistry 组可使用本机游戏 DLL 运行。
 

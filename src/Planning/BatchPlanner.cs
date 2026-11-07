@@ -257,6 +257,7 @@ namespace DreamDustAutomation.Planning
             Result.outputCapacity = inputs.maxProducts;
             Result.outputLimited = OutputCapacity.DryProducts(winningParts, recipe) > Result.expectedBottles;
             Result.minimumActive = selection.Outcome.MinimumBottleActiveVolume;
+            foreach (var ignored in MatchReadyStockGrade()) yield return null;
             var final = new List<BatchAction>(Result.actions);
             final.Add(new BatchAction(Operation.Dry) { evaporationVolume = Liquid.Liquids
                 .Select((liquid, index) => liquid.isEvaporative ? winningParts[index] : 0).Sum() });

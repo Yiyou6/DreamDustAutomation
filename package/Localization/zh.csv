@@ -2,6 +2,8 @@ name,全自动制毒机-解放你的双手
 description,放材料，选药物和浓度，计算后开工。\n产量、消耗遵循原版；过夜完成反应。\n双击设备装模块；自带电池和酒精收集罐。
 idle,待机
 preview_hint,放入材料，点击“计算方案”
+dilution_used,调浓度用酸碱：{0:0.###} mL
+dilution_unavailable,调浓度条件不足，保留当前浓度
 calculate,计算方案
 start,等待计算方案
 start_grade,按 {0}% 开工

@@ -12,7 +12,7 @@ namespace DreamDustAutomation.Planning
         {
             if (!CanAdvance(batch)) return;
             var action = batch.plan.actions[batch.step];
-            int seconds = Math.Max(0, action.amount - batch.elapsed);
+            int seconds = ReactionProgress.RequiredSeconds(batch, tank, buffer);
             if (seconds > 900) throw new MachineFault("runtime_reaction_duration");
             var reactor = new SimulationItem(tank);
             var reserve = buffer != null && !batch.plan.separateDirect ? new SimulationItem(buffer) : null;
@@ -25,8 +25,8 @@ namespace DreamDustAutomation.Planning
             }
             Commit(tank, reactor);
             if (reserve != null) Commit(buffer, reserve);
-            batch.step++;
-            batch.elapsed = 0;
+            batch.elapsed = action.amount;
+            ReactionProgress.FinishOrContinue(batch, tank, buffer);
         }
         private static void Commit(GameItem vessel, SimulationItem result)
         {

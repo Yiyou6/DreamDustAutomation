@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $keys = [Collections.Generic.HashSet[string]]::new()
 foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'src') -Recurse -Filter '*.cs') {
-    foreach ($match in [regex]::Matches([IO.File]::ReadAllText($file.FullName), '"((?:diag|runtime|changed|restore|missing_core)_[a-z_]+)"')) {
+    foreach ($match in [regex]::Matches([IO.File]::ReadAllText($file.FullName), '"((?:diag|runtime|changed|restore|missing_core|dilution)_[a-z_]+)"')) {
         if (!$match.Groups[1].Value.EndsWith('_')) { [void]$keys.Add($match.Groups[1].Value) }
     }
 }

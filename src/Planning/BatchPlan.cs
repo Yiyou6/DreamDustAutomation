@@ -52,6 +52,8 @@ namespace DreamDustAutomation.Planning
         public int minimumActive;
         public int reactionSeconds;
         public int reagents;
+        public int dilutionVolume;
+        public bool dilutionUnavailable;
         public int recoveredVolume;
         // Optional preview/candidate costs; old saves default to zero. The
         // actual filter actions and native durability remain authoritative.
@@ -70,6 +72,7 @@ namespace DreamDustAutomation.Planning
                 expectedBottles = expectedBottles, minimumActive = minimumActive, outputCapacity = outputCapacity, outputLimited = outputLimited,
                 requestedBottles = requestedBottles, availableBottles = availableBottles,
                 reactionSeconds = reactionSeconds, reagents = reagents, recoveredVolume = recoveredVolume,
+                dilutionVolume = dilutionVolume, dilutionUnavailable = dilutionUnavailable,
                 fineFilterWear = fineFilterWear, coarseFilterWear = coarseFilterWear,
                 alcoholPercent = alcoholPercent, extractionAlcohol = extractionAlcohol, extractionPortions = extractionPortions,
                 concentrationHint = concentrationHint, quantityHint = quantityHint,

@@ -1415,15 +1415,20 @@ namespace DreamDustAutomation
                 (plan.extractionPortions > 0 && AlcoholBudget.Supports(ChemicalRecipe.Get(plan.productId)) ?
                     "\n" + T(productId == "caffeine_pill" && plan.extractionAlcohol == 0 ? "coffee_water_extraction" : "extraction_summary", plan.alcoholPercent, plan.extractionAlcohol / 1000.0, plan.extractionPortions) : "");
             if (!plan.directForm) liquidDetails += "\n" + NormalDryingSummary(plan);
+            string dilution = plan.dilutionVolume > 0 ? T("dilution_used", plan.dilutionVolume / 1000.0) :
+                plan.dilutionUnavailable ? T("dilution_unavailable") : "";
+            if (dilution.Length > 0) liquidDetails += "\n" + dilution;
             if (plan.fineFilterWear > 0 || plan.coarseFilterWear > 0)
                 liquidDetails += "\n" + T("filter_wear_preview", plan.fineFilterWear, plan.coarseFilterWear);
             previewButton.SetDescription((plan.directForm ? T(plan.separateDirect ? "direct_preview" : "direct_legacy_preview") : T("selection_hint")) + "\n" + liquidDetails);
             if (plan.requestedBottles > 0)
                 previewButton.SetDescription(T("quantity_ready", plan.expectedBottles) + "\n" + liquidDetails + "\n" + T("quantity_help"));
-            SetTextIfChanged(reagentText, plan.directForm ? liquidDetails : T("reagents_volume", plan.reagents / 1000.0) +
+            string reagentSummary = plan.directForm ? liquidDetails : T("reagents_volume", plan.reagents / 1000.0) +
                 (plan.recoveredVolume > 0 ? "\n" + T("recovered_short", plan.recoveredVolume / 1000.0) : "") +
                 (plan.extractionPortions > 0 && AlcoholBudget.Supports(ChemicalRecipe.Get(plan.productId)) ?
-                    "\n" + T(productId == "caffeine_pill" && plan.extractionAlcohol == 0 ? "coffee_water_extraction" : "extraction_compact", plan.alcoholPercent, plan.extractionAlcohol / 1000.0, plan.extractionPortions) : ""));
+                    "\n" + T(productId == "caffeine_pill" && plan.extractionAlcohol == 0 ? "coffee_water_extraction" : "extraction_compact", plan.alcoholPercent, plan.extractionAlcohol / 1000.0, plan.extractionPortions) : "");
+            if (!plan.directForm && dilution.Length > 0) reagentSummary += "\n" + dilution;
+            SetTextIfChanged(reagentText, reagentSummary);
             string hint = plan.quantityHint ?? plan.concentrationHint;
             SetTextIfChanged(concentrationAdvice, string.IsNullOrEmpty(hint) ? "" :
                 plan.directForm ? T(hint) : T(plan.quantityHint != null ? "partial_stock_limit" : "purity_hint", T(hint)) + "\n" + T(hint + "_action"));
@@ -1637,6 +1642,7 @@ namespace DreamDustAutomation
             EnsureFinisherTank();
             if (!BindHardware()) return;
             running = BatchPersistence.Load(machine, out string restoreError);
+            if (WetBatchRecovery.TryResume(running, tank, mashBuffer)) Save();
             if (restoreError != null) ModEntry.Log.Warning("Batch save could not be resumed; materials kept. Recalculate from the remaining contents. " + restoreError);
             formingBatch = null;
             reservedInputs.Clear();
@@ -2234,7 +2240,7 @@ namespace DreamDustAutomation
             if (ReactionProgress.IsTimed(action.operation))
             {
                 running.elapsed++;
-                if (running.elapsed >= action.amount) { running.step++; running.elapsed = 0; }
+                if (running.elapsed >= action.amount) ReactionProgress.FinishOrContinue(running, tank, mashBuffer);
                 Save();
                 AdvanceImmediate();
             }

@@ -2,6 +2,8 @@ name,Fully Automatic Drug Lab - Free Your Hands
 description,Load supplies, choose a drug and grade, then calculate and start.\nVanilla yield and costs; reactions finish overnight.\nDouble-click devices for upgrades. Battery and alcohol collector included.
 idle,Idle
 preview_hint,Insert materials and click Calculate
+dilution_used,Acid/base for grade adjustment: {0:0.###} mL
+dilution_unavailable,Grade adjustment unavailable; current purity retained
 calculate,Calculate
 start,Awaiting calculation
 start_grade,Start at {0}% concentration
