@@ -1,0 +1,34 @@
+# Track only the mod's source, resources and development scripts.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/DreamDustAutomation.csproj
+!/Build.ps1
+!/Prepare-Assets.ps1
+!/Test.ps1
+!/Test-*.ps1
+!/src/
+!/tests/
+!/package/
+!/assets/
+
+# Local game assemblies, build output, credentials and developer data.
+**/bin/
+**/obj/
+**/dist/
+**/TestResults/
+**/research/
+**/tools/
+**/.env
+**/.env.*
+**/*.user
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.log
+**/*.vdf
+**/*.pem
+**/*.key
+**/credentials*
+**/secrets*

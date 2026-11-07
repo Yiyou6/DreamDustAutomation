@@ -1,0 +1,474 @@
+name,Fully Automatic Drug Lab - Free Your Hands
+description,Load supplies, choose a drug and grade, then calculate and start.\nVanilla yield and costs; reactions finish overnight.\nDouble-click devices for upgrades. Battery and alcohol collector included.
+idle,Idle
+preview_hint,Insert materials and click Calculate
+calculate,Calculate
+start,Awaiting calculation
+start_grade,Start at {0}% concentration
+stop,Stop / cancel
+raw,Common input bin
+supplies,Reagents / filters
+blender,Blend
+heater,Heat
+evaporator,Evaporate
+finisher,Form
+ingredients,Batch inputs
+hardware,Equipment upgrades
+output,Products
+control,Production settings
+storage,Storage and equipment
+tab_raw,Inputs
+tab_supplies,Reagents
+tab_hardware,Upgrades
+tab_output,Output
+tab_waste,Waste
+capacity_waste,Waste bin: 16×16 (256 cells)
+waste_hint,Empty input vessels + spent cloth and disposable filters\nReusable filters stay in inputs
+waste_full,Waste bin lacks space. Empty input vessels / spent disposable filters stay in inputs until room is available.
+waste_return_full,Input bin lacks space. Reusable filters remain in waste until they can be returned.
+capacity_raw,Common input bin: 12×24 (288 cells)
+capacity_supplies,Reagents / filters: 12×12 (144 cells)
+capacity_output,Products: 16×160 (2560 cells)
+output_selection_hint,Drag from the gray left edge to select · Scroll for more
+output_no_space,No output slot fits the selected product.\nCollect or rearrange products, then calculate.
+output_limit_title,Output space limits this batch
+output_limit_detail,Room for {0} units\nExcess stays in the tank\nFree space; then recalculate
+output_limit_ready,Limited by remaining output space\nThis batch: at most {0} units\nUnused stock and unformed tank contents are kept
+complete_limited,Space limit reached: {0} units\nResidue kept; collect and recalculate
+grade_unavailable,{0}% unavailable
+grade_selected,{0}% selected
+checked_grade,Checked {0}% grade
+missing_core,Insert all four stage machines
+missing_tank,Evaporator reaction slot has no container.\nOpen it and install a reaction vessel.
+failed,A stopped batch was restored without a saved reason.\nContents kept. Cancel and recalculate.
+preview_failed,Calculation failed; inputs untouched
+candidates,Checked {0} candidates
+resumed,Unfinished batch restored
+restore_incomplete,Saved batch plan or progress is missing.\nMaterials kept. Recalculate from current contents.
+calculating,Calculating…
+changed,Inputs or output space changed\nCalculate again
+preview_target,Your target: {0}%
+preview_actual,Selected grade: {0}%
+preview_output,Expected output: {0} bottles
+reagents_volume,Liquid use: {0:0.###} mL
+recovered_volume,From recovered alcohol: {0:0.###} mL
+recovery_hint,Recovered alcohol is used automatically
+reaction_time,Reactions: ~{0}s plus evaporation
+ready_title,Target grade reached
+fallback_title,Target missed; lower grade selected
+ready,Review the plan, then start
+fallback,No higher-grade plan found
+no_raw,Missing ingredients for the selected medicine
+unsupported_raw,No suitable ingredients for this recipe
+tank_full,The reactor cannot hold this batch.\nReduce feed or use a larger reaction vessel.
+no_grade,Checked products do not reach 30% purity.\nSee Input Check for impurity and cleanup advice.
+complete,Batch complete: {0} units
+stage_blend,Blending
+stage_pour,Dosing
+stage_extract,Heating / extracting
+stage_react,Waiting for reactions
+stage_filter,Filtering
+stage_dry,Waiting for vanilla evaporation cycle
+stage_boildry,Boiling dry - no overnight wait
+boiling_estimate,Processing estimate - includes boiling
+boiling_remaining,Processing remaining - includes boiling
+direct_boil_hint,This batch will boil dry without an overnight wait.\nNative heat losses are included in the yield.
+direct_boil_solvents,Reagents used as feed; boiling dry.\nVolatile solvents lost; native losses included.
+direct_boil_upgrade,The base heater stops at 99 C and cannot boil water.\nInstall at least one heater module to boil dry.
+direct_boil_protected,Medicine residue present: using vanilla evaporation.\nAvoids heat damage to active ingredients.
+direct_boil_failed,Boiling did not finish within the 900-second limit\nReduce liquid or choose Evaporate, then recalculate
+stage_form,Forming bottles
+no_power,Evaporator has no usable power.\nOpen it and add a charged battery to continue.
+output_full,No contiguous output slot fits the next item.\nCollect or rearrange products to continue.
+stopped,Stopped; remaining materials kept in tank
+batch_plan,Batch plan
+machine_status,Machine status
+metric_grade,Min. purity
+metric_bottles,Expected output
+bottle_value,{0} bottles
+hardware_help,Open stages to add modules, even while processing\nEvaporator: universal / evaporator modules\nOther stages: chemical modules
+storage_hint,Scroll for more cells · Double-click to open containers
+plan_mix,Reading inputs and blending loss…
+plan_extract,Calculating solvent and extraction…
+plan_cleanup,Calculating treatment and cleanup…
+plan_grade,Checking grades and bottle counts…
+no_alcohol,Extraction needs alcohol; add a reagent
+extraction_failed,Extraction did not finish within 900 planning seconds.\nReduce feed or increase the alcohol setting.
+synthesis_timeout,Synthesis did not finish within 900 planning seconds.\nCheck catalyst/reagents or reduce feed.
+reaction_estimate,Estimated reaction time
+reaction_remaining,Reaction time remaining
+seconds_value,{0} s
+evaporation_remaining,Liquid left · evaporates on game cycles
+evaporation_eta,This evaporation stage · estimated remaining
+evaporation_days,About {0} day(s)
+evaporation_no_power,Evaporation paused · no power
+evaporation_days_after_power,About {0} day(s) once powered
+evaporation_zero_rate,Evaporation rate is zero
+evaporation_unavailable,Cannot finish yet
+evaporation_details,{0:0.#} mL left · current rate {1:0.#} mL/day\nAdvances overnight; assumes current rate and continuous power
+volume_value,{0:0.#} mL
+bottling_progress,Bottles completed
+bottles_progress,{0} / {1}
+progress_stopped,Processing stopped
+selected_product,Medicine: {0}
+tab_production,Process
+tab_recipes,Choose medicine
+legacy_inputs,Legacy inputs (included automatically)
+residual_included,Existing tank contents affect this batch
+residue_title,Stored residue · {0:0.###} mL
+residue_component,{0}: {1:0.###} mL
+residue_other,Other: {0:0.###} mL
+residue_foreign,Other drugs present; purity may fall
+residue_reuse,Residue joins this batch
+residue_help,Clear it or open devices to remove it
+cleanup,Clear stored residue…
+cleanup_confirm,Discard all {0:0.###} mL of residue
+cleanup_cancel,Cancel cleanup
+cleanup_review,Confirm residue disposal
+cleanup_discard,Empty all three process vessels
+cleanup_irreversible,Includes medicine; cannot be undone
+cleanup_changed,Vessels or contents changed; request cleanup again
+cleanup_done,Residue cleared; recalculate
+residue_confirmation,Not started: confirm mixing tank residue
+residue_confirm,Mix residue and start at {0}%
+residue_cancel,Go back without starting
+plan_synthesize,Calculating synthesis steps…
+stage_synthesize,Temperature-controlled synthesis
+stage_dissolve,Dissolving ingredients
+heater_upgrade_required,This synthesis needs at least 1 heater module
+missing_reducing_agent,Missing reducing agent for synthesis
+missing_lipobond_agent,Missing lipobond agent for synthesis
+missing_stabilizer_reagent,Precursor stabilizer has not been removed.\nUsable acid or base is needed; see dose details.
+alcohol_inhibits_recipe,Auxiliary reagent alcohol inhibits this reaction
+pill_value,{0} pills
+injector_value,{0} injectors
+input_instructions,Add ingredients / reagents / filters here
+input_no_pitcher,No pitchers; empty input bottles/tanks/jugs go to Waste
+selection_hint,All means all feasible output at this grade\nOnly needed supplies are taken
+partial_stock_limit,Partial feed — whole batch: {0}
+recipe_dream_dust,Uses Dream Caps or existing extract; meters solvent and cleanup reagents automatically.
+recipe_nightmare_dust,Uses the corresponding mushrooms or extract; meters solvent and cleanup reagents automatically.
+recipe_caffeine_pill,Uses coffee or caffeine solution. Reduced alcohol uses staged extraction; 100% keeps water extraction as an alternative.
+recipe_zyanide_pill,Separates the active ingredient supplied in raw material or solution before drying and forming.
+recipe_birth_control_pill,Separates the active ingredient supplied in raw material or solution before drying and forming.
+recipe_fanta_pill,Treats precursor solution and meters reducing agent for synthesis. Requires at least one native heater module.
+recipe_pink_alt_injector,Automates extraction and intermediate evaporation followed by dosing and synthesis.
+purity_hint,Purity tip: {0}
+purity_target,Selected grade reached
+purity_target_action,Select a higher grade and recalculate.
+purity_finisher,Finisher adds impurities
+purity_finisher_action,Add finisher modules and recalculate.
+purity_residue,Impurities from tank residue
+purity_residue_action,Transfer or clear residue and recalculate.
+purity_protein,Protein remains
+purity_protein_action,Add acid/base and filters; recalculate.
+purity_fat,Fat remains
+purity_fat_action,Add lipobond and filters; recalculate.
+purity_stabilizer,Stabilizer remains
+purity_stabilizer_action,Add acid/base and filters; recalculate.
+purity_microbe,Microbes remain
+purity_microbe_action,Add a UV filter and recalculate.
+purity_cleaner,Hard-to-filter impurities
+purity_cleaner_action,Use purer ingredients/reagents; recalculate.
+purity_filter_missing,No suitable filter
+purity_filter_missing_action,Add a loose advanced filter; recalculate.
+purity_filter_spent,Filters are worn out
+purity_filter_spent_action,Replace the filters and recalculate.
+purity_filter_more,Filterable impurities remain
+purity_filter_more_action,Add filters or use less stock; recalculate.
+tab_alcohol,Batch extraction
+alcohol_button,Batch extraction: save alcohol
+alcohol_selected,Batch extraction: save alcohol ({0}%)
+alcohol_help,100%: load all at once\nLower ratios: feed in batches; less alcohol, more time\nFor mushrooms and coffee\nRatios use total stock; see the plan for doses
+alcohol_not_needed,Follow the batch plan
+alcohol_stock,Pure alcohol available: {0:0.###} mL
+alcohol_need,{0}% requires {1:0.###} mL pure alcohol
+alcohol_unavailable,Not enough alcohol for this option\nChoose a smaller dose or add alcohol\nOr remove some feed and recalculate
+extraction_summary,Alcohol {0}%: {1:0.###} mL pure\n{2} extraction portions
+missing_buffer,Staged extraction needs a holding tank in the blender; open the blender and install a container
+buffer_full,The blender buffer cannot hold this batch of mash.\nUse a larger buffer or reduce feed.
+buffer_return_full,Buffer residue cannot all return to the reactor.\nTransfer some out or use a larger reactor.
+buffer_residue,Buffered leftovers: {0:0.###} mL; included in the next plan
+stage_storemash,Moving remaining feed to holding tank
+stage_feedmash,Feeding the next mash portion
+alcohol_locked,Batch alcohol setting is locked\nChange after completion or cancellation
+alcohol_short_button,{0}% alcohol unavailable; click to adjust
+stage_extract_portion,Extracting portion {0} / {1}
+mode_normal,Normal medicine (click to switch)
+mode_direct,Fake medicine only (click to switch)
+direct_help,Process separately; see the plan for purity\nMedicinal stock stays in the bin
+direct_no_reagents,Filters kept; reagent use follows the toggle
+direct_preview_hint,Load Meal Caps, nutrient fruit, dirty water or other filler
+direct_title,Fake medicine only · Lowest product purity
+direct_preview,Process each source separately; add complete products\nShows the lowest purity; 0% products are allowed
+direct_start,Start processing with selected strategy
+direct_residue_confirm,Use tank leftovers to make fake medicine
+plan_direct,Calculating fake medicine quantity and purity
+direct_no_raw,No usable filler or tank leftovers\nTry Meal Caps, nutrient fruit or dirty water; medicinal stock stays
+direct_protected_input,Medicinal feedstock protected\nStop / cancel the old batch and recalculate
+direct_no_output,Nothing usable remains after processing\nPure water or liquids that fully evaporate cannot make fake medicine
+direct_unstable,The mixture still changes after 900 simulated seconds\nCheck mixed reagents or reduce the load, then recalculate
+tab_labels,Labels
+label_actual,Use each product's real quality
+labels_open,Batch labels
+labels_apply,Label selected drug
+labels_help,Choose a label and share for each drug\nActual purity and other labels stay as they are
+labels_working,Labeling current products…
+labels_done,Quality labels set on {0} products
+labels_failed,Labeled {0}; error — check the log
+label_keep,Keep existing labels
+labels_apply_all,Label all drugs
+labels_settings,Label settings
+labels_categories,Product categories
+labels_percentage,Share to label
+labels_count,{1} in category: relabel {0}; keep {2}
+labels_order,Top to bottom then left to right\nRound down to whole products
+product_dream_dust,Dream Dust
+product_nightmare_dust,Nightmare Dust
+product_caffeine_pill,Caffeine Pills
+product_zyanide_pill,Zyanide Pills
+product_birth_control_pill,Birth Control Pills
+product_fanta_pill,Fanta Pills
+product_pink_alt_injector,Pink Alt Injector
+normal_help,Make medicine at your target grade\nUse reagents and filters as needed
+tab_help,Help
+help_current,Intake check
+help_modes,Modes
+help_materials,Common issues
+input_check_open,Check inputs
+help_check_intro,Check feed and mode\nRecalculate after changes
+help_modes_body,NORMAL MEDICINE\nUse medicinal feed and purify to your target grade.\nReagents and filters are used as needed.\nIf the target is missed, review the lower grade before starting.\n\nFAKE MEDICINE ONLY\nUse food, dirty water, dry impurities or tank residue.\nProcess sources separately; filters stay in the bin.\nMedicinal stock stays in the bin. See the plan for purity.\nDefault: evaporate. A heater module enables heat drying.\nReagent feed defaults OFF; enabling it requires confirmation.\nAlcohol, lipobond and liquids containing them stay untouched.\nPure water yields zero units. Containers are kept.\n\nBOTH MODES\nVanilla yield, losses and costs apply.\nReactions finish overnight; evaporation uses daily throughput.\nKeep finished drugs in output. Calculate and start each batch.
+help_materials_body,FEED\nMeal Caps make fakes with zero Dream Dust ingredient.\nMushroom types make different drugs; mutations use actual contents.\nBottled slurry, extracts and recovered alcohol can be used directly.\nUse water bottles or tanks. Dirty water is for fakes.\nEmpty input containers move to waste. Device vessels stay installed.\nUV filters remove microbes; particle filters remove solids.\n\nDEVICES\nChemist starts include this machine.\nAfter unlocking the chemist, each doctor refresh has a 50% chance.\nOwning one stops offers; losing it allows another purchase.\nFanta pills need at least one heater module.\nDuring processing, add modules; installed devices and vessels stay locked.\nEvaporator upgrades apply next cycle; others next batch.\nTurbo speeds evaporation only and still uses power.\nAdjacent energy arrays can charge the evaporator battery.\n\nLEFTOVERS\nRestock during processing for the next batch.\nResidue affects purity; mixing other drugs requires confirmation.\nCleanup discards all contents of the three process vessels.\nProducts can be returned to output. Labels preserve actual purity.
+input_empty,No feed for this drug\nAdd feed and calculate
+input_direct_empty,No usable materials for fake medicine\nTry Meal Caps, nutrient fruit, dirty water or tank leftovers
+input_meal_not_drug,Meal Caps are not Dream Caps: no Dream Dust ingredient\nSwitch to Fake medicine only to use them as filler
+input_cap_no_compound,No medicinal components detected in these caps\nCheck variety/genetics; alcohol cannot replace feedstock
+input_food_not_drug,These solids contain no medicine; normal mode leaves them\nSwitch to Fake medicine only to use them as filler
+input_other_product,Feed fits: {0}\nChoose another drug or add feed
+input_other_kept,Other drug feed: {0}\nKept for later
+input_more_products, and others
+input_aux_only,Only reagents or filters found\nAdd medicinal feed
+input_unrecognized,No processable matching feedstock detected\nCheck composition and whether it can be blended/dissolved
+input_residue_no_feed,Tank residue has no feedstock for the selected medicine\nAdd matching ingredients or check the selected product
+input_bottled_feed,Bottled feed detected; ready to use
+input_already_extracted,Medicinal ingredients detected
+input_recognized,Feed found; calculate to see yield
+input_recovered,Recovered alcohol included\nNew recovery waits for the next batch
+input_filters_empty,Current particle filters have no durability left\nReplace them or wait for regenerating filters to recover
+input_uv_only,Only UV filtration is present: it kills microbes\nAdd a particle filter when particle cleanup is needed
+input_pitcher,Water pitchers cannot supply the input bin\nTransfer liquid to a jug, tank or bottle; load filters loose
+input_output_not_feed,Place finished drugs in output
+input_waste_not_feed,Move materials to input to use them
+input_direct_protected,Medicinal feed uses Normal medicine\nSwitch modes to process it
+input_direct_bottles,Medicinal extracts, pure water and alcohol solutions stay\nOther dirty liquids and dry filler can be used; reagents need the toggle
+input_direct_filters,Filters kept\nEnable reagent feed to use reagents
+input_direct_residue_only,Only tank leftovers can be used for this fake batch\nOnce gone, no usable inputs remain; medicinal stock stays
+input_direct_residue,Existing tank residue is processed separately from new feed\nYields add up; check the preview
+input_meal_direct,Meal Caps make fakes with zero Dream Dust ingredient
+input_direct_food,Usable filler detected\nNo purifying; check the plan for actual purity, including 0%
+input_zero_preview,At least one product has 0% purity and no potency\nFor real medicine, use medicinal inputs and Normal medicine
+input_batch_locked,Batch inputs reserved\nNew stock waits for the next batch
+input_calculating,Calculating; please wait
+alcohol_missing_feed,Add feed first
+alcohol_pre_extracted,See Check inputs for feed details
+alcohol_not_applicable,Process this drug directly
+input_direct_water,Non-medicinal impure water detected\nEvaporate and form residue; emptied vessels move to Waste
+input_pure_water,Pure water leaves nothing to form after evaporation\nLow-grade goods need impure water or non-medicinal solids
+input_finished_product,Place finished drugs in output
+input_water_direct_only,Dirty water is used only in Fake medicine only\nNormal medicine leaves it in the input bin
+residue_empty,No residue
+recovered_short,Reused {0:0.###} mL
+extraction_compact,Alcohol {0}% · {1:0.###} mL\n{2} portions
+residue_block,Stored residue
+residue_total,Residue {0:0.###} mL
+sort,Sort all
+sort_help,Sort input, output and waste\nGroup by type; smaller items first\nContents, labels and durability stay unchanged
+sort_done,All three bins sorted
+sort_no_space,Not enough space to complete sorting\nItems stayed in place; free some space first
+sort_changed,Bin contents changed; please sort again
+sort_failed,Sorting failed; original positions restored
+quantity_wait,Quantity: All (calculate first)
+quantity_all,Quantity: All {0} units
+quantity_selected,Quantity: {0} / {1} units
+quantity_help,Drag to select; scroll to fine-tune\nTake only needed supplies; extra mash stays in the buffer
+quantity_calculating,Recalculating feed and reagents for {0} units…
+quantity_ready,Make {0} units; keep unused material
+quantity_complete,Completed {0} units; leftovers kept
+quantity_changed,Available quantity changed. Recalculate the plan
+quantity_unavailable,No checked plan meets the exact count and grade.\nAdjust quantity; see Input Check or Calculate tooltip.
+quantity_buffer_full,The buffer cannot hold mash left after metering.\nUse a larger buffer or increase the order.
+quantity_retry,No plan for this quantity
+input_direct_dry,Dry non-medicinal container residue detected\nReady to form; no added water or evaporation needed
+input_dry_direct_only,Starch and other dry filler can make fake medicine\nSwitch to Fake medicine only; normal mode leaves it untouched
+purity_boundary,Some bottles fall just below the next grade
+purity_boundary_action,Scanner values round; use purer feedstock
+direct_solvent_confirm,Use these reagents to make fakes and start
+direct_solvent_confirmation,Not started: this batch will consume reagents as filler\nConfirm before they are used
+direct_solvent_detail,This batch uses these reagents as feed: {0}\nSources are processed separately and complete units are added. Acid and base from different bottles are not mixed.\nIngredients already mixed within one bottle still undergo native heated reactions and losses. Evaporated material adds no yield.\nSub-unit leftovers are kept. To preserve reagents, go back, disable the option and recalculate.
+direct_solvent_preview,Warning: reagents will be consumed to make fakes\nSee Intake check for which ones
+direct_solvent_residue_confirm,Use reagents and tank leftovers to make fakes and start
+direct_solvent_residue_confirmation,Not started: reagents and other medicine leftovers will be used\nConfirm before they are consumed
+input_direct_solvents,Acid/base and other reagents may be used as feed\nSeparate processing adds their yields; review the preview
+input_direct_volatile_solvents,Pure volatile reagents cannot form products alone\nOnly material left after reactions and evaporation counts
+direct_solvents_help,Available in Fake medicine only; OFF by default. Enable to consume acid, base, reducing agent and stabilizer as filler.\nLiquids containing alcohol or lipobond, and medicinal ingredients, stay in the bin.\nEach bottle is processed separately and its products counted. No extra reaction wait; vanilla heat losses still apply.\nLeftovers too small for one product are kept, not pooled for extra output. Liquids return to their bottle; solids stay in the holding tank. Recalculate after changes.
+direct_solvents_off,Make fakes from reagents: OFF
+direct_solvents_on,Make fakes from reagents: ON
+input_direct_alcohol_kept,Alcohol-containing feed is kept\nAdd other materials for fakes
+input_direct_solvents_kept,Make fakes from reagents is OFF: reagents stay\nEnable the toggle below and recalculate to use them
+changed_capacity,Reactor or buffer capacity changed.\nRecalculate for the new container.
+changed_inputs,Feed, reagents, filters or recovered liquid changed.\nRecalculate; the old preview is invalid.
+changed_modules,Stage upgrades or processing losses changed.\nRecalculate before starting.
+changed_output,Available output capacity changed.\nRecalculate for the remaining space.
+changed_settings,Product, mode or target settings changed.\nRecalculate with the new settings.
+changed_tank,Reactor or buffer contents changed.\nRecalculate; the old preview is invalid.
+diag_alcohol_inhibits_detail,This synthesis candidate contains {0:0.##}% alcohol, exceeding the native 10% limit.\nCheck whether reducer or lipobond carries alcohol into this stage.
+diag_alternatives,Rejected plans and reasons (no materials used):
+diag_budget_detail,The chosen setting needs {0:0.###} mL pure alcohol; available: {1:0.###} mL.\nThis gate uses all relevant feed. Water and contaminants do not count as alcohol.
+diag_capacity_detail,This candidate needs to transfer {0:0.###} mL; free room: {1:0.###} mL.\nContents: {2:0.###} / capacity: {3:0.###} mL.
+diag_cleanup_timeout,Cleanup reactions did not settle within the limit.\nCheck mixed reagents or reduce the batch.
+diag_cooling_timeout,The heated feed did not cool within the limit.\nLet it cool and recalculate before dosing lipobond.
+diag_cycle_capacity,Products accumulate during cyclic extraction.\nReduce batch size or use a larger reactor.
+diag_dose_capacity_detail,{0}: still needs {1:0.###} mL of effective ingredient.\nActual solutions require {2:0.###} mL more; room left: {3:0.###} mL.
+diag_dose_stock_detail,{0}: this step still needs {1:0.###} mL; usable: {2:0.###} mL.\nAnother {3:0.###} mL is tied up in unselected feed.\nReactor room left: {4:0.###} mL.
+diag_feed_capacity,The reactor has no room for liquid feed.\nTransfer some contents out and recalculate.
+diag_grade_detail,Lowest purity {0:0.##}%; target {1}%\nChecked per unit, without detector rounding
+diag_less_than_one,Not enough for 1 unit\nAdd feed or upgrade to reduce losses
+diag_more_help,Hover Calculate for details
+diag_one_unit_detail,Formable material left: {0:0.###} mL; one unit requires {1:0.###} mL.
+diag_portion_limit,Cyclic extraction exceeded the planning portion limit.\nIncrease the alcohol setting or reduce feed.
+diag_quantity_grade,The smaller batch cannot keep the full plan's grade.\nAdjust quantity or improve feed/reagents.
+diag_quantity_grade_detail,Small-batch grade: {0}%; full-plan grade: {1}%.
+diag_quantity_minimum,The order is below this setup's minimum batch.\nIncrease quantity or the alcohol setting.
+diag_quantity_no_feed,Meterable feed is missing or has changed.\nRecalculate the full plan before selecting quantity.
+diag_quantity_range,Material volume exceeds the planning range.\nReduce the feed and recalculate.
+diag_quantity_recheck,Step-by-step validation of this quantity failed.\nInputs are untouched. Recalculate; report repeats.
+diag_quantity_yield,This portion cannot produce the exact requested count.\nAdjust the quantity and recalculate.
+diag_quantity_yield_detail,This portion produces {0} units; requested: {1}.
+diag_reagent_capacity,Required {0} solution will not fit.\nUse purer reagent, less feed or a larger tank.
+diag_reagent_in_feed,Some {0} is tied up in unselected feed.\nAdd separate reagent or change the feed.
+diag_reagent_short,Not enough usable {0} for this step.\nAdd the reagent or reduce this batch.
+diag_reagent_short_and_full,Both {0} supply and tank room are insufficient.\nReduce feed and add suitable reagent.
+diag_solid_capacity,One whole solid ingredient cannot fit.\nTransfer some residue out or use a larger tank.
+missing_core_blender,Internal blender missing or replaced by wrong device.\nReinstall the vanilla blender under Upgrades.
+missing_core_chem_finisher,Internal finisher missing or wrong device.\nReinstall the vanilla finisher under Upgrades.
+missing_core_evaporator,Internal evaporator missing or wrong device.\nReinstall the vanilla evaporator under Upgrades.
+missing_core_heating_plate,Internal heater missing or replaced by wrong device.\nReinstall the vanilla heater under Upgrades.
+runtime_evaporation_rate,Current evaporator performance gives zero evaporation.\nCheck penalties/modules; resume after restoring rate.
+runtime_invalid_transfer,The batch contains an invalid transfer volume.\nStopped. Recalculate and report the F8 log.
+runtime_less_than_one,Less than one unit remains.\nEnd this batch to withdraw material or restock and recalculate.
+runtime_batch_short,Material is below the previewed amount.\nEnd this batch and recalculate.
+runtime_output_rejected,Output placement was rejected after finding a slot.\nNo feed consumed for that unit. Check output and replan.
+runtime_purity_changed,The next unit falls below the previewed grade.\nEnd this batch and recalculate. Remaining material is kept.
+diag_stock_reacting,A source is still reacting in its container.\nWait and recalculate. Materials are kept.
+diag_stock_reacting_detail,{0}: {1} is still changing.\nStart after the contents stabilize.
+complete_rounding_tail,Planned {0}; completed {1}.\nThe remaining tail is kept for the next batch.
+runtime_reaction_endpoint,Current contents cannot reach the planned reaction endpoint.\nStopped. Check modules/composition and recalculate.
+runtime_recheck,Start validation could not reproduce the preview.\nInputs untouched. Recalculate; report repeats.
+runtime_saved_operation,Saved batch has an unsupported processing step.\nContents kept. Cancel the old batch and recalculate.
+runtime_source_amount,A source now holds less than the planned withdrawal.\nProcessing stopped. Check contents and recalculate.
+runtime_source_missing,A reserved ingredient or reagent container is missing.\nProcessing stopped. Cancel and recalculate.
+runtime_still_wet,Volatile liquid remains; native forming is blocked.\nStopped. Check tank contents and recalculate.
+runtime_tank_capacity,The reactor cannot fit the next solid ingredient.\nContents kept. Use a larger tank or less feed.
+runtime_transfer_capacity,The receiving container cannot fit the next transfer.\nStopped. Check reactor and buffer free space.
+runtime_unknown,Unexpected error; automatic processing stopped.\nProvide the F8 log; avoid repeatedly starting.
+restore_version,Saved batch version is unsupported.\nMaterials kept. Update the mod and recalculate.
+restore_product,The saved product is unsupported by this version.\nMaterials kept. Select a product and recalculate.
+restore_operation,Saved processing steps are invalid or unsupported.\nMaterials kept. Recalculate; provide F8 log if repeated.
+restore_progress,Saved progress conflicts with the processing steps.\nMaterials kept. Recalculate from current contents.
+restore_invalid,Batch save format or values are invalid.\nMaterials kept. Recalculate and provide the F8 log.
+diag_step_extraction,Stage: extraction
+diag_step_cleanup,Stage: impurity cleanup / neutralization
+diag_step_stabilizer,Stage: stabilizer treatment
+diag_step_synthesis,Stage: product synthesis
+runtime_filter_missing,The planned filter is missing or was replaced.\nAdd a suitable filter, stop and recalculate.
+runtime_filter_volume,Tank contents are below the planned filter volume.\nPaused. Check tank contents and recalculate.
+diag_recheck_quantity,Rechecked yield differs from the confirmed quantity.\nInputs untouched. Recalculate the plan.
+diag_recheck_grade,Rechecked purity is below the confirmed grade.\nInputs untouched. Check modules/contents and replan.
+direct_separate_hint,Separate sources; add their yields\nHeat losses included; sub-unit leftovers kept
+direct_separate_no_output,No individual source yields a complete unit\nAdd more to a source; fractions are not pooled
+direct_separate_buffer_full,The holding tank cannot fit this source's leftover\nRemove holding residue or fit a larger vessel, then recalculate
+direct_legacy_preview,Previously started batch: continuing its saved plan\nRecalculate after completion for separate processing
+stage_returnfeed,Returning sub-unit leftovers to their bottle
+stage_swaptanks,Switching vessels to process existing residue separately
+runtime_tank_swap,Could not exchange reaction and holding vessels\nCheck both vessels are installed, then recalculate
+direct_drying_title,Fake medicine: drying
+direct_evaporate_choice,Evaporate
+direct_heat_choice,Heat dry
+direct_evaporate_help,Dry overnight; battery required
+direct_evaporate_no_module,Dry overnight; battery required\nInstall a heater module to enable heat
+direct_heat_help,Heat wet feed; form dry feed directly\nProcess separately; vanilla losses apply
+direct_heat_modules,Heater module missing\nInstall one or evaporate
+direct_heat_medicine,Heat damages the medicine\nChoose evaporation
+direct_heat_preview,Heat wet feed; form dry feed directly\nLosses counted; leftovers kept
+direct_evaporate_preview,Dry overnight; battery required\nYields added; leftovers kept
+direct_drying_changed,Drying method changed\nRecalculate the plan
+direct_drying_legacy,Existing batch keeps its saved drying steps\nChoose a method after finishing or cancelling
+direct_quantity_step,No exact-count independent plan found\nAdjust quantity or drying method and recalculate
+processing_estimate,Reactions + batch evaporation estimate
+processing_preview_value,{0} s + ~{1} days
+evaporation_batch_days,Batch evaporation remaining: ~{0} days
+evaporation_forecast_unknown,Old plan lacks evaporation estimates
+evaporation_not_needed,No evaporation wait in this plan
+evaporation_forecast_stages,{0} drying stages · {1:0.#} mL/day
+evaporation_forecast_assumption,Assumes continuous power; excludes turbo
+evaporation_stage_volume,Stage left: {0:0.#} mL · {1:0.#} mL/day
+boiling_lots,{0} heating lots · Hover Start for details
+boiling_lot_detail,Lot {0}: {1} · {2} seconds
+boiling_more_lots,{0} more heating lots
+boiling_native_rule,Vanilla heating speed; add each source's time.\nDrying slows near the end. Dry feed and water-free acid/base skip heating.
+boiling_tank,Tank residue
+boiling_feed,Feedstock
+planned_input_hint,Green frame: take as needed · Scroll for rows · Double-click containers
+coffee_water_extraction,Using water to extract caffeine
+coffee_water_fallback,Not enough alcohol: 100% can try water extraction
+coffee_water_help,Coffee at 100% can use water for lower yield\nReduced settings use staged alcohol extraction
+hardware_calculating,Module changes are locked while calculating\nInstall after calculation, then recalculate
+hardware_pending,Next batch: {0}
+hardware_running,Modules can be added; devices and vessels stay locked\nEvaporator: universal / evaporator; others: chemical\nEvaporation upgrades: next cycle; others: next batch
+normal_drying_check,Comparing heat and evaporation...
+normal_drying_compare,Evaporate {0} / Heat {1} units
+normal_drying_help,Heat may reduce yield; alcohol is lost.\nSome stages still need evaporation.\nRecalculate after stock, upgrade or quantity changes.
+normal_evap_selected,Evaporate selected; alcohol can be recovered
+normal_evaporate_choice,Evaporate
+normal_evaporate_help,Dry overnight; alcohol can be recovered.
+normal_heat_check_failed,Heat plan failed validation\nRecalculate or evaporate
+normal_heat_check_first,Calculate before choosing heat\nDefault: evaporate and recover alcohol
+normal_heat_damage,Heat damages this medicine\nChoose evaporation
+normal_heat_details,Minimum purity {0:0.###}%\nReaction {1} s; evaporation takes extra time\nAlcohol lost: about {2:0.###} mL
+normal_heat_grade,Heat misses the target grade\nEvaporate or lower the target
+normal_heat_mixed,Heat selected; some stages still evaporate
+normal_heat_not_needed,Already dry; ready to process
+normal_heat_recheck,Contents changed; heat plan invalid\nRecalculate or evaporate
+normal_heat_selected,Heat selected; alcohol is lost
+normal_heat_timeout,Cannot dry within 900 seconds\nUse less liquid, upgrade or evaporate
+normal_heat_unstable,Residue keeps reacting; yield is unstable\nEvaporate or adjust supplies
+filter_wear_preview,Durability used: filters {0} / cloth {1}\nMeet the selected grade, then save cartridge wear\nUse suitable cloth first; prefer advanced cartridges
+input_direct_lipobond_kept,Lipobond-containing feed is kept\nAdd dirty water or non-medicinal food
+direct_lipobond_protected,The old plan would consume lipobond; intake has been paused\nStop / cancel and recalculate to keep the lipobond
+defer_output_off,Hold material: OFF
+defer_output_on,Hold material: ON
+defer_output_help,Processed material stays in the finisher.\nRelease a quantity, or end the batch to withdraw material.\nProgress is saved.
+defer_output_all,Release all
+defer_output_selected,Release {0} selected units
+defer_output_pause,Pause output
+defer_output_retry,Retry this batch (keep material)
+defer_output_ready,Material ready; choose output quantity
+defer_output_stock,Units still in the vessel
+defer_output_wait_help,Material stays in the finisher\nRelease a quantity, or end the batch to withdraw it
+batch_finish,End this batch
+batch_finish_help,Keep all remaining material and unlock internal vessels.\nWithdraw material or recalculate.
+batch_kept,Batch ended; material kept.\nWithdraw material, or restock and recalculate.
+neutralizer_stock,Detected acid {0:0.###} mL / base {1:0.###} mL
+neutralizer_draw,Planned withdrawal: acid {0:0.###} mL / base {1:0.###} mL
+neutralizer_rule,Acid/base treat protein and other impurities, followed by filtration.\nUse depends on your target grade. Impurities in feed and reagents also affect purity.
+neutralizer_direct,Fake medicine uses reagents according to the feedstock toggle.\nSelect Normal medicine for purification.
+defer_output_quantity,Release: {0} / {1} remaining
+defer_output_slider_help,Drag or scroll to choose how many units to bottle.\nRelease all finishes this batch.
+defer_output_releasing,{0} more units in this release
+missing_finisher_tank,The finisher has no vessel\nDouble-click it and install an empty water tank
+runtime_finisher_capacity,The finisher vessel cannot hold this batch\nInstall a larger vessel or select fewer units and recalculate
+runtime_residue_capacity,Reactor cannot hold the finisher residue\nRemove residue, clear vessels or fit a larger reactor
+residue_vessels,Scope: reactor, buffer and finisher vessels.
+runtime_reaction_duration,Invalid reaction duration.\nEnd this batch and recalculate.
+diag_reagent_foreign,{0} is in another medicine\nAdd a separate reagent supply
+diag_foreign_reagent_detail,Required {0}: {1:0.###} mL; available: {2:0.###} mL\nAnother {3:0.###} mL is held in other medicine stock and kept.

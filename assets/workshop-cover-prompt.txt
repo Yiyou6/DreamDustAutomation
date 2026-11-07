@@ -1,0 +1,16 @@
+Use case: ads-marketing.
+Create a finished square Steam Workshop cover for a fictional space-pawnshop game's AUTOMATED CHEMISTRY WORKSTATION mod. This cover advertises a fictional game machine and its time-saving automation.
+
+Input image 1 is a visual reference for the in-game machine only. Preserve its squat gunmetal silhouette, left materials hopper, central glass reaction chamber, right cylindrical chamber, copper pipes, amber switches, and front tray. Show this as a general-purpose science-fiction laboratory appliance, with glowing violet sample fluid and small sealed sample vessels. No pills, substance names, human use or real chemistry instructions.
+
+Art direction: polished chunky pixel-art game key art, crisp deliberate pixel clusters, weathered steel, very readable shapes, restrained atmospheric lighting. Charcoal and neutral industrial gray backdrop, amber/yellow signage and copper details. Confine violet light to the reaction chamber and reflected highlights; the background stays dark gray. Place the hero machine on a subtle worn workbench in a science-fiction merchant's workshop. Practical, powerful and playful: a tireless mechanical employee. No people.
+
+Layout: square 1:1, legible at Steam thumbnail size. Top 25 percent: large bold Chinese headline with an amber-yellow tagline. Middle/lower 60 percent: large recognizable machine, sharply separated from the quiet background. Bottom: a small industrial plaque. Generous safe margins. Strong contrast and professional typography. Crisp illustration, not a loose concept sheet. Opaque full-bleed image.
+
+Render ONLY the following exact text, each once:
+Top headline, largest: "全自动化学工坊"
+Tagline, large amber-yellow: "解放你的双手"
+Secondary English line: "AUTO CHEM LAB"
+Bottom plaque: "原版平衡 · 自动优化"
+
+Check the Chinese characters carefully. Use clean bold industrial lettering that remains legible when small. No extra captions, logos, watermarks, photorealism, glossy 3D, purple background wash, explosions, skulls, guns, or crowded layouts. Deliver one complete final cover.

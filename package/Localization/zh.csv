@@ -1,0 +1,474 @@
+name,全自动制毒机-解放你的双手
+description,放材料，选药物和浓度，计算后开工。\n产量、消耗遵循原版；过夜完成反应。\n双击设备装模块；自带电池和酒精收集罐。
+idle,待机
+preview_hint,放入材料，点击“计算方案”
+calculate,计算方案
+start,等待计算方案
+start_grade,按 {0}% 开工
+stop,停止／取消
+raw,统一投料仓
+supplies,试剂容器／滤芯
+blender,搅拌
+heater,加热
+evaporator,蒸发
+finisher,成型
+ingredients,本批材料
+hardware,设备升级
+output,成品
+control,制作设置
+storage,仓库与设备
+tab_raw,投料
+tab_supplies,试剂
+tab_hardware,升级
+tab_output,成品
+tab_waste,垃圾
+capacity_waste,垃圾区：16×16（256格）
+waste_hint,收集空容器、耗尽的棉布和普通滤芯\n可恢复滤芯留在投料仓
+waste_full,垃圾区满了\n腾出空间后继续回收
+waste_return_full,投料仓满了\n腾出空间后退回可恢复滤芯
+capacity_raw,投料仓：12×24（288格）
+capacity_supplies,试剂／滤芯：12×12（144格）
+capacity_output,成品：16×160（2560格）
+output_selection_hint,从左侧灰边拖动框选 · 滚轮翻页
+output_no_space,成品仓空位太小\n取货或整理后重算
+output_limit_title,成品仓空位有限，已限量
+output_limit_detail,最多装 {0} 件，余料保留\n取货后重算
+output_limit_ready,空位只够 {0} 件\n到量就停，余料保留
+complete_limited,已装满：{0} 件\n余料保留，取货后重算
+grade_unavailable,{0}% 未达标
+grade_selected,{0}% 本次采用
+checked_grade,已检查 {0}% 档位
+missing_core,请在“升级”栏装回四台设备
+missing_tank,反应罐缺失\n双击蒸发器，装入容器
+failed,旧批次已暂停，原因未记录\n余料保留，请取消后重算
+preview_failed,计算失败，材料未消耗
+candidates,已比较 {0} 种做法
+resumed,已继续上次加工
+restore_incomplete,加工记录缺失\n材料保留，请重新计算
+calculating,正在计算…
+changed,材料、设备或空位已变\n请重新计算
+preview_target,目标浓度：{0}%
+preview_actual,采用档位：{0}%
+preview_output,预计产出：{0}瓶
+reagents_volume,取用液体：{0:0.###} mL
+recovered_volume,其中回收酒精：{0:0.###} mL
+recovery_hint,自动取用回收酒精
+reaction_time,反应约 {0} 秒，另需等待蒸发
+ready_title,已达目标浓度
+fallback_title,目标未达，已降低档位
+ready,确认方案后开工
+fallback,未找到更高浓度方案
+no_raw,缺少所选药物的原料
+unsupported_raw,没有适用原料
+tank_full,反应罐空余容量太小\n减少投料，或换大罐后重算
+no_grade,成品浓度低于 30%\n点“投料检查”查看原因
+complete,本批完成：{0} 份
+stage_blend,搅拌原料
+stage_pour,加入试剂
+stage_extract,加热提取
+stage_react,等待反应
+stage_filter,过滤杂质
+stage_dry,等待过夜蒸发
+stage_boildry,加热烧干
+boiling_estimate,预计加工时间（含烧干）
+boiling_remaining,剩余加工时间（含烧干）
+direct_boil_hint,加热烧干\n产量已扣除损耗
+direct_boil_solvents,用试剂做假药，加热烧干\n蒸发部分会损失，产量已扣损耗
+direct_boil_upgrade,烧水需要超过 99°C\n请给加热板装至少 1 个模块
+direct_boil_protected,含药物余料，改用蒸发\n避免高温损失药物
+direct_boil_failed,烧干预计超过 900 秒\n减少液体，或改用蒸发
+stage_form,装药
+no_power,蒸发器缺电\n双击装入有电的电池后继续
+output_full,下一件成品需要更大空位\n取货或整理后继续
+stopped,已停止，余料保留
+batch_plan,本批方案
+machine_status,机器状态
+metric_grade,成品最低浓度
+metric_bottles,预计产出
+bottle_value,{0} 瓶
+hardware_help,双击设备装模块，加工中也能装\n蒸发器：通用／蒸发模块\n其他设备：化学模块
+storage_hint,滚轮翻页 · 双击容器
+plan_mix,检查原料与搅拌损耗…
+plan_extract,计算酒精用量…
+plan_cleanup,计算酸碱用量…
+plan_grade,计算浓度与产量…
+no_alcohol,请补充酒精
+extraction_failed,提取预计超过 900 秒\n减少原料，或提高酒精比例
+synthesis_timeout,反应预计超过 900 秒\n检查试剂，或减少原料
+reaction_estimate,预计反应时间
+reaction_remaining,反应剩余时间
+seconds_value,{0} 秒
+evaporation_remaining,等待过夜蒸发
+evaporation_eta,预计还需
+evaporation_days,约 {0} 天
+evaporation_no_power,蒸发暂停 · 缺电
+evaporation_days_after_power,供电后约 {0} 天
+evaporation_zero_rate,蒸发速度为 0
+evaporation_unavailable,暂无法完成
+evaporation_details,剩余 {0:0.#} mL · 每天 {1:0.#} mL\n需过夜，并保持供电
+volume_value,{0:0.#} mL
+bottling_progress,已完成装瓶
+bottles_progress,{0} / {1}
+progress_stopped,加工已停止
+selected_product,药物：{0}
+tab_production,加工
+tab_recipes,选择药物
+legacy_inputs,旧版材料（自动取用）
+residual_included,余料会一起加工，影响浓度
+residue_title,机内余料：{0:0.###} mL
+residue_component,{0}：{1:0.###} mL
+residue_other,其他：{0:0.###} mL
+residue_foreign,混有其他药物，可能降低浓度
+residue_reuse,余料会一起加工
+residue_help,可清理，或打开设备取走
+cleanup,清理机内余料…
+cleanup_confirm,丢弃全部 {0:0.###} mL 余料
+cleanup_cancel,取消清理
+cleanup_review,请确认是否丢弃余料
+cleanup_discard,清空三个工序罐
+cleanup_irreversible,包括药料，丢弃后无法恢复
+cleanup_changed,余料已变，请重新确认
+cleanup_done,余料已清空，请重新计算
+residue_confirmation,请确认是否混用余料
+residue_confirm,混用余料，按 {0}% 开工
+residue_cancel,返回
+plan_synthesize,计算制药步骤…
+stage_synthesize,加热制药
+stage_dissolve,溶解原料
+heater_upgrade_required,加热板至少需要 1 个模块
+missing_reducing_agent,缺少还原剂，请补充
+missing_lipobond_agent,缺少脂结合剂，请补充
+missing_stabilizer_reagent,稳定剂未清除\n请补酸碱，缺口见“投料检查”
+alcohol_inhibits_recipe,试剂含酒精过多，无法反应
+pill_value,{0} 片
+injector_value,{0} 支
+input_instructions,原料、试剂、滤芯放这里
+input_no_pitcher,请用水箱、水瓶或储水罐，空容器进垃圾区
+selection_hint,“全部”指所选浓度下的可做数量\n只取所需材料，剩余留仓
+partial_stock_limit,部分取料：整批{0}
+recipe_dream_dust,用梦帽菇、菇糊或提取液。\n试剂、滤芯按需取用。
+recipe_nightmare_dust,用噩梦菇、菇糊或提取液。\n试剂、滤芯按需取用。
+recipe_caffeine_pill,用咖啡原料或咖啡因溶液。\n分批可省酒精；100% 档可用水，但产量较低。
+recipe_zyanide_pill,用含氰化物的原料或液体，除杂后装药。
+recipe_birth_control_pill,用对应原料或药液，除杂后装药。
+recipe_fanta_pill,用前驱液和还原剂。\n加热板至少装 1 个模块。
+recipe_pink_alt_injector,从梦帽菇提取药液，蒸干后加试剂合成。
+purity_hint,提高浓度：{0}
+purity_target,已达目标浓度
+purity_target_action,想更纯，选更高档后重算
+purity_finisher,成型时混入杂质
+purity_finisher_action,给成型机加模块后重算
+purity_residue,余料带入杂质
+purity_residue_action,取走或清理余料后重算
+purity_protein,有蛋白质杂质
+purity_protein_action,补酸碱和滤芯后重算
+purity_fat,有脂肪杂质
+purity_fat_action,补脂结合剂和滤芯后重算
+purity_stabilizer,有稳定剂杂质
+purity_stabilizer_action,补酸碱和滤芯后重算
+purity_microbe,有微生物
+purity_microbe_action,放入紫外线滤芯后重算
+purity_cleaner,有难过滤的杂质
+purity_cleaner_action,换更纯的原料或试剂后重算
+purity_filter_missing,缺少可用滤芯
+purity_filter_missing_action,放入独立高级滤芯后重算
+purity_filter_spent,滤芯已耗尽
+purity_filter_spent_action,更换滤芯后重算
+purity_filter_more,仍有可过滤杂质
+purity_filter_more_action,补滤芯或减少投料后重算
+tab_alcohol,分批萃取
+alcohol_button,分批萃取：节省酒精
+alcohol_selected,分批萃取：节省酒精（{0}%）
+alcohol_help,100%：一次加料\n更低比例：分批加料，省酒精但更慢\n适用菇类和咖啡\n比例按全仓估算，用量看方案
+alcohol_not_needed,按方案加工
+alcohol_stock,可用纯酒精：{0:0.###} mL
+alcohol_need,{0}% 档需纯酒精 {1:0.###} mL
+alcohol_unavailable,请补酒精、降低比例或减少原料
+extraction_summary,酒精 {0}% 档 · {1:0.###} mL\n分 {2} 次加料
+missing_buffer,缺少暂存罐\n双击搅拌器，装入空容器
+buffer_full,暂存罐空位太小\n换大罐或减少原料
+buffer_return_full,反应罐需要更多空间接收余料\n取走部分余料，或换大罐
+buffer_residue,暂存 {0:0.###} mL，下批可用
+stage_storemash,暂存原料
+stage_feedmash,分批加料
+alcohol_locked,加工中无法改比例\n完成或取消后调整
+alcohol_short_button,请补酒精或调整 {0}% 档
+stage_extract_portion,分批提取：第 {0}／{1} 次
+mode_normal,正常制药（点击切换）
+mode_direct,只做假药（点击切换）
+direct_help,分开加工，浓度看方案\n药用原料留仓
+direct_no_reagents,滤芯保留；试剂由开关决定
+direct_preview_hint,放入食用菇、营养果或脏水后计算
+direct_title,只做假药 · 成品最低浓度
+direct_preview,分开加工，产量相加\n显示最低浓度，可为 0%
+direct_start,按选定策略开工
+direct_residue_confirm,用余料做假药
+plan_direct,计算假药浓度与数量…
+direct_no_raw,缺少假药原料\n可放食用菇、营养果或脏水
+direct_protected_input,发现药用原料，已停止取用\n请取消旧批次后重算
+direct_no_output,加工后可装药材料为零\n请加入食物、脏水或干杂质
+direct_unstable,900 秒后仍在反应\n检查混装试剂，或减少材料
+tab_labels,标签
+label_actual,真实品质
+labels_open,批量贴标签…
+labels_apply,给选中药品贴标
+labels_help,每种药物可选标签和比例\n实际浓度与其余标签保持原样
+labels_working,正在批量贴标…
+labels_done,已贴标 {0} 件
+labels_failed,已贴标 {0} 件；失败详情见日志
+label_keep,保持原标签
+labels_apply_all,给所有药品贴标
+labels_settings,标签设置
+labels_categories,药物分类
+labels_percentage,贴标比例
+labels_count,共 {1} 件：改 {0} 件，留 {2} 件
+labels_order,从上到下、从左到右贴标\n件数取整：3 件选 50% 只改 1 件
+product_dream_dust,梦尘
+product_nightmare_dust,噩梦尘
+product_caffeine_pill,咖啡因片
+product_zyanide_pill,氰化物片
+product_birth_control_pill,避孕片
+product_fanta_pill,芬酞片
+product_pink_alt_injector,奥克莫吸注射器
+normal_help,按目标浓度制药\n试剂、滤芯按需取用
+tab_help,帮助
+help_current,投料检查
+help_modes,模式区别
+help_materials,常见疑问
+input_check_open,投料检查
+help_check_intro,检查原料与模式\n改动材料后请重算
+help_modes_body,【正常制药】\n用药用原料，按目标浓度提纯。\n试剂、滤芯按需取用。\n浓度低于目标就降档，开工前看方案。\n\n【只做假药】\n用食物、脏水、干杂质或罐内余料。\n分开加工，滤芯留仓。\n仓内药用原料保留；实际浓度看方案。\n默认蒸发；装加热模块可选烧干。\n“用试剂做假药”默认关，开启后需确认。\n酒精、脂合剂及其混合液留仓。\n纯水产量为零；容器保留。\n\n【共同规则】\n产量、损耗、消耗遵循原版。\n过夜完成加热反应；蒸发按天结算。\n成品放成品区；每批重新计算、开工。
+help_materials_body,【材料】\n食用帽菇梦尘成分为零，适合做假药。\n梦帽菇做梦尘，噩梦菇做噩梦尘。\n变异植物看实际成分。\n瓶装菇糊、药液可直接用。\n回收酒精自动取用。\n水罐禁入，请用水箱、储水罐或水瓶。\n脏水只做假药；用空的投料容器进垃圾区。\n紫外线滤芯只除菌，颗粒滤芯除杂质。\n\n【设备】\n化学家开局自带本机。\n旧档解锁化学家后，博士每次50%概率售卖。\n已有本机时停售；遗失后可再次购买。\n芬酞片至少需要 1 个加热模块。\n加工中可装模块，已装设备和罐子锁定。\n蒸发模块下次蒸发生效，其余下批生效。\n涡轮增压只加速蒸发，仍耗电。\n相邻能量阵列可给蒸发器电池充电。\n\n【补料与余料】\n加工中可补料，下批使用。\n余料影响浓度，混入其他药物需确认。\n清理会丢弃三个工序罐的全部内容。\n成品可取出放回；贴标保留真实浓度。
+input_empty,缺少所选药物的原料\n请加入原料后计算
+input_direct_empty,缺少假药原料\n可用食物、脏水或罐内余料
+input_meal_not_drug,食用帽菇适合做假药\n请切换“只做假药”
+input_cap_no_compound,蘑菇药用成分为零\n请检查品种或基因
+input_food_not_drug,食物适合做假药\n请切换“只做假药”
+input_other_product,现有原料可做：{0}\n请切换药物或加入原料
+input_other_kept,其他药物原料：{0}\n留给下批
+input_more_products,等
+input_aux_only,只有试剂或滤芯\n请加入药用原料
+input_unrecognized,未找到适用原料\n请检查成分及能否搅拌或溶解
+input_residue_no_feed,请加入所选药物的原料\n也可切换药物后重新计算
+input_bottled_feed,已识别瓶装原料，可直接用
+input_already_extracted,检测到药用成分
+input_recognized,已找到原料，计算后查看产量
+input_recovered,回收酒精已计入\n本批新回收的留给下批
+input_filters_empty,颗粒滤芯耐久用完\n请更换，或等耐久恢复
+input_uv_only,紫外线滤芯只能除菌\n除杂质请加颗粒滤芯
+input_pitcher,请换水箱、水瓶或储水罐\n滤芯单独放
+input_output_not_feed,药物成品请放成品区
+input_waste_not_feed,要用的物品请移回投料仓
+input_direct_protected,药用原料适用于“正常制药”\n请切换模式
+input_direct_bottles,假药可用脏水、干杂质\n药液、纯水、含酒精的液体留仓
+input_direct_filters,滤芯保留\n使用试剂需先开开关
+input_direct_residue_only,仅罐内余料可做假药\n仓内药用原料保留
+input_direct_residue,余料单独加工，产量相加
+input_meal_direct,食用帽菇可做假药，梦尘成分为零
+input_direct_food,已找到假药原料，浓度看方案
+input_zero_preview,含 0% 成品，无药效\n真药请用药用原料，选“正常制药”
+input_batch_locked,本批原料已锁定\n新投材料留给下批
+input_calculating,正在计算，请稍候
+alcohol_missing_feed,请先加入原料
+alcohol_pre_extracted,药料详情见“投料检查”
+alcohol_not_applicable,此药物直接加工
+input_direct_water,脏水可做假药\n蒸干取杂质，空容器进垃圾区
+input_pure_water,纯水蒸干后为空\n请用脏水或食物做假药
+input_finished_product,药物成品请放成品区
+input_water_direct_only,脏水仅用于“只做假药”
+residue_empty,无余料
+recovered_short,回收液体 {0:0.###} mL
+extraction_compact,酒精 {0}% 档 · {1:0.###} mL\n分 {2} 次加料
+residue_block,机内余料
+residue_total,残留 {0:0.###} mL
+sort,自动整理
+sort_help,整理投料、成品和垃圾区\n同类放一起，小件在前\n保留内容、标签和耐久
+sort_done,三个仓库已整理
+sort_no_space,整理需要更多空位\n请先腾出空间
+sort_changed,仓库内容已变化，请重试整理
+sort_failed,整理未完成，已恢复原位
+quantity_wait,数量：全部（先计算）
+quantity_all,数量：全部 {0} 件
+quantity_selected,数量：{0} / {1} 件
+quantity_help,拖动选数量，滚轮微调\n只取所需材料，多余原料糊留罐
+quantity_calculating,计算 {0} 件的用料…
+quantity_ready,本批做 {0} 件，余料保留
+quantity_complete,已完成 {0} 件，余料下批可用
+quantity_changed,可做数量已变，请重算
+quantity_unavailable,数量与浓度无法同时满足\n请调数量，原因见“投料检查”
+quantity_buffer_full,暂存罐需要更多空间存放原料糊\n换大罐或增加制作数量
+quantity_retry,此数量暂无可行方案
+input_direct_dry,已有干杂质，可直接做假药
+input_dry_direct_only,纯淀粉等干料只能做假药\n请切换“只做假药”
+purity_boundary,装药后浓度略低于目标
+purity_boundary_action,检测器会四舍五入，请换更纯原料
+direct_solvent_confirm,消耗试剂，开始做假药
+direct_solvent_confirmation,本批要消耗试剂做假药\n请确认后开工
+direct_solvent_detail,消耗试剂：{0}\n各瓶独立加工，产量相加。\n瓶内原有混合物仍有加热损耗。\n各瓶零头分别保留。\n想保留试剂，请关闭“用试剂做假药”后重算。
+direct_solvent_preview,本批会用试剂做假药\n用料见“投料检查”
+direct_solvent_residue_confirm,消耗试剂和余料，开工
+direct_solvent_residue_confirmation,会消耗试剂和其他药物余料\n请确认后开工
+input_direct_solvents,试剂可做假药，各瓶分开加工
+input_direct_volatile_solvents,试剂会蒸发完，产量为零
+direct_solvents_help,开启后可用酸碱等试剂做假药。\n含酒精、脂合剂的材料及药用原料留仓。\n各瓶分开做，产量相加，保留原版损耗。\n各瓶零头分别保留。\n改动后请重算，开工前需确认。
+direct_solvents_off,用试剂做假药：关
+direct_solvents_on,用试剂做假药：开
+input_direct_alcohol_kept,含酒精的材料留给正常制药\n请加入其他假药原料
+input_direct_solvents_kept,已保留试剂\n要消耗，请开启“用试剂做假药”后重算
+changed_capacity,容器容量已变，请重算
+changed_inputs,投料或回收酒精已变\n请重新计算
+changed_modules,模块或加工损耗已变，请重算
+changed_output,成品仓空位已变，请重算
+changed_settings,制作设置已变，请重算
+changed_tank,罐内材料已变，请重算
+diag_alcohol_inhibits_detail,酒精 {0:0.##}%，超过 10% 上限\n请检查还原剂、脂合剂是否混入酒精
+diag_alternatives,未通过的方案及原因（未扣材料）：
+diag_budget_detail,纯酒精需 {0:0.###} mL，现有 {1:0.###} mL\n按全仓原料与纯酒精含量估算
+diag_capacity_detail,需倒入 {0:0.###} mL，空余 {1:0.###} mL\n罐内 {2:0.###} / 容量 {3:0.###} mL
+diag_cleanup_timeout,除杂反应超时\n检查混装试剂，或减少材料
+diag_cooling_timeout,冷却超时\n等降温后重算，勿先加脂合剂
+diag_cycle_capacity,分批提取液装满反应罐\n减少原料或换大罐
+diag_dose_capacity_detail,{0}还缺 {1:0.###} mL 纯试剂\n需倒入 {2:0.###} mL，空余仅 {3:0.###} mL
+diag_dose_stock_detail,{0}：还需 {1:0.###} mL，可用 {2:0.###} mL\n另有 {3:0.###} mL 混在未选原料中，无法单取\n罐内空余 {4:0.###} mL
+diag_feed_capacity,反应罐需要更多空间接收原料\n取走部分余料后重算
+diag_grade_detail,最低浓度 {0:0.##}%，目标 {1}%\n以每件成品的实际浓度为准
+diag_less_than_one,材料少于 1 件用量\n请补原料，或加模块减少损耗
+diag_more_help,鼠标停在“计算方案”上查看详情
+diag_one_unit_detail,可用 {0:0.###} mL，每件需 {1:0.###} mL
+diag_portion_limit,分批次数超出计算上限\n提高酒精比例或减少原料
+diag_quantity_grade,减量后浓度低于目标\n调整数量或补充原料试剂
+diag_quantity_grade_detail,减量后 {0}%，整批 {1}%
+diag_quantity_minimum,选的数量太少\n增加数量或提高酒精比例
+diag_quantity_no_feed,请检查原料余量\n先重算“全部”，再选数量
+diag_quantity_range,材料超出计算范围\n减少投料后重算
+diag_quantity_recheck,复核产量与预览有差异，材料保留\n请重算；反复出现请反馈
+diag_quantity_yield,无法做出所选数量\n调整数量后重算
+diag_quantity_yield_detail,可做 {0} 件，选了 {1} 件
+diag_reagent_capacity,反应罐需要更多空间加入{0}\n减少投料、换大罐或换纯试剂
+diag_reagent_in_feed,{0}混在原料中，无法单取\n补独立试剂或调整投料
+diag_reagent_short,请补充{0}或减少原料
+diag_reagent_short_and_full,缺{0}，反应罐也快满了\n减少投料后补试剂
+diag_solid_capacity,整份原料需要更大反应罐\n取走余料或换大罐
+missing_core_blender,搅拌器缺失或放错\n请在“升级”栏装回
+missing_core_chem_finisher,成型机缺失或放错\n请在“升级”栏装回
+missing_core_evaporator,蒸发器缺失或放错\n请在“升级”栏装回
+missing_core_heating_plate,加热板缺失或放错\n请在“升级”栏装回
+runtime_evaporation_rate,蒸发速度为零，已暂停\n检查模块和减速效果
+runtime_invalid_transfer,倒料数量异常，已停止\n请重算，并提供 F8 日志
+runtime_less_than_one,余料少于 1 件用量\n点“结束本批”后取出或补料重算
+runtime_batch_short,药料少于预览用量\n点“结束本批”后重新计算
+runtime_output_rejected,成品放入失败，未扣材料\n检查空位后重算
+runtime_purity_changed,浓度低于预览，已暂停装药\n结束本批后重算，余料保留
+diag_stock_reacting,瓶内成分仍在变化\n稍等后重算，材料保留
+diag_stock_reacting_detail,{0}：{1}仍在变化\n稳定后再开工
+complete_rounding_tail,预计{0}件，完成{1}件\n尾料留罐，可补料再做
+runtime_reaction_endpoint,反应无法完成，已停止\n检查模块和成分后重算
+runtime_recheck,复核与预览有差异，材料保留\n请重算；反复出现请反馈
+runtime_saved_operation,旧加工步骤需要更新\n余料保留，请取消后重算
+runtime_source_amount,原料或试剂短缺，已停止\n检查瓶内材料后重算
+runtime_source_missing,本批原料或试剂瓶丢失\n请取消旧批次后重算
+runtime_still_wet,还有液体未蒸干，无法装药\n检查罐内材料后重算
+runtime_tank_capacity,下一份原料需要更多反应罐空间\n换大罐或减少投料后重算
+runtime_transfer_capacity,接收容器空间太小，已停止\n检查反应罐和暂存罐空位
+runtime_unknown,加工异常，已停止\n请提供 F8 日志，勿反复开工
+restore_version,加工记录版本有差异\n材料保留，请更新模组后重算
+restore_product,请重新选择药物\n材料保留，旧药物记录已跳过
+restore_operation,加工步骤无效\n材料保留，重算或提供 F8 日志
+restore_progress,加工进度与步骤有差异\n材料保留，请重新计算
+restore_invalid,加工记录损坏\n材料保留，请重算并提供 F8 日志
+diag_step_extraction,步骤：提取
+diag_step_cleanup,步骤：酸碱除杂
+diag_step_stabilizer,步骤：去稳定剂
+diag_step_synthesis,步骤：合成药物
+runtime_filter_missing,指定滤芯丢失或已变\n补滤芯，取消后重算
+runtime_filter_volume,过滤所需材料短缺，已暂停\n检查余量后重算
+diag_recheck_quantity,复核产量有差异，材料保留\n请重新计算
+diag_recheck_grade,复核浓度低于目标，材料保留\n检查模块和原料后重算
+direct_separate_hint,分开加工，产量相加\n已扣损耗，零头保留
+direct_separate_no_output,各份材料均少于 1 件用量\n请增加单份材料，各份零头保留
+direct_separate_buffer_full,暂存罐需要更多空间\n取走余料或换大罐后重算
+direct_legacy_preview,旧批次沿用原方案\n下批改为分开加工
+stage_returnfeed,余料退回原瓶
+stage_swaptanks,切换容器，处理余料
+runtime_tank_swap,容器切换失败\n装回反应罐和暂存罐后重算
+direct_drying_title,假药处理方式
+direct_evaporate_choice,蒸发器蒸干
+direct_heat_choice,加热烧干
+direct_evaporate_help,过夜蒸干，需要电池
+direct_evaporate_no_module,过夜蒸干，需要电池\n想烧干，请给加热板装模块
+direct_heat_help,有液体就烧干，干料直接装药\n分开加工，保留原版损耗
+direct_heat_modules,加热板缺少模块\n装至少 1 个，或改选蒸发
+direct_heat_medicine,加热会损失药物成分\n请改选蒸发
+direct_heat_preview,有液体就烧干，干料直接装药\n产量已扣损耗，零头保留
+direct_evaporate_preview,过夜蒸干，需要电池\n产量相加，零头保留
+direct_drying_changed,处理方式已变，请重算
+direct_drying_legacy,本批沿用旧方式\n完成或取消后可改
+direct_quantity_step,无法恰好做出所选数量\n调整数量或处理方式后重算
+processing_estimate,预计反应 + 整批蒸发
+processing_preview_value,{0} 秒 + 约 {1} 天
+evaporation_batch_days,整批剩余蒸发约 {0} 天
+evaporation_forecast_unknown,旧方案无蒸发时间预估
+evaporation_not_needed,蒸发等待：0 天
+evaporation_forecast_stages,蒸发 {0} 次 · 每天 {1:0.#} mL
+evaporation_forecast_assumption,按持续供电估算；涡轮可再加速
+evaporation_stage_volume,剩余 {0:0.#} mL · 每天 {1:0.#} mL
+boiling_lots,{0} 份依次加热 · 悬停开工看明细
+boiling_lot_detail,第 {0} 份：{1} · {2} 秒
+boiling_more_lots,另有 {0} 份需加热
+boiling_native_rule,按原版速度加热，各份耗时相加。\n越接近烧干越慢；干料、无水酸碱直接装药。
+boiling_tank,罐内余料
+boiling_feed,本份原料
+planned_input_hint,绿框：按需取用 · 滚轮翻页 · 双击容器
+coffee_water_extraction,本批用水提取咖啡因
+coffee_water_fallback,酒精较少：100% 档可用水提取
+coffee_water_help,100% 档可用水提取，产量较低\n其他比例用酒精分批提取
+hardware_calculating,计算中模块已锁定\n结束后可装，装后需重算
+hardware_pending,下批生效：{0}
+hardware_running,加工中可装模块，设备和罐子已锁定\n蒸发器用通用／蒸发模块，其余用化学模块\n蒸发模块下次蒸发生效，其余下批生效
+normal_drying_check,比较加热与蒸发…
+normal_drying_compare,蒸发 {0} 件 / 加热 {1} 件
+normal_drying_help,加热可能减产，酒精无法回收。\n部分步骤仍需蒸发。\n改动材料、模块或数量后请重算。
+normal_evap_selected,已选蒸发，可回收酒精
+normal_evaporate_choice,蒸发
+normal_evaporate_help,过夜蒸干，可回收酒精。
+normal_heat_check_failed,加热方案复核失败\n请重算，或改选蒸发
+normal_heat_check_first,先计算，再选是否烧干\n默认蒸发，可回收酒精
+normal_heat_damage,加热会损失药物成分\n请选择蒸发
+normal_heat_details,最低浓度 {0:0.###}%\n反应 {1} 秒，蒸发另计\n烧掉酒精约 {2:0.###} mL
+normal_heat_grade,加热后浓度低于目标\n改选蒸发，或降低目标重算
+normal_heat_mixed,已选加热，部分步骤仍需蒸发
+normal_heat_not_needed,材料已干，可直接加工
+normal_heat_recheck,材料已变，无法按原方案烧干\n请重算或改选蒸发
+normal_heat_selected,已选加热，酒精会损失
+normal_heat_timeout,烧干预计超过 900 秒\n减少液体、加模块或选蒸发
+normal_heat_unstable,烧干后仍会反应，产量可能变化\n请选蒸发，或调整材料
+filter_wear_preview,耐久消耗：滤芯 {0} / 棉织物 {1}\n达到目标浓度后优先省滤芯\n可过滤时先用棉布，滤芯优先高级
+input_direct_lipobond_kept,含脂合剂的材料留给正常制药\n请另加脏水或食物
+direct_lipobond_protected,旧方案会消耗脂合剂，已暂停\n请取消后重算
+defer_output_off,暂存药料：关
+defer_output_on,暂存药料：开
+defer_output_help,加工后药料留在成型机。\n可选数量产出，或结束本批后取出药料。\n存档保留进度。
+defer_output_all,全部产出
+defer_output_selected,产出 {0} 件
+defer_output_pause,暂停产出
+defer_output_retry,重试本批
+defer_output_ready,药料已备好，请选产出数量
+defer_output_stock,还可产出
+defer_output_wait_help,药料留在成型机\n可选数量产出，或结束本批后取出
+batch_finish,结束本批
+batch_finish_help,保留全部余料，解锁机内容器。\n可取出药料，或重新计算。
+batch_kept,本批已结束，余料保留\n可取出药料，或补料重算
+neutralizer_stock,识别到酸 {0:0.###} mL · 碱 {1:0.###} mL
+neutralizer_draw,本方案取用：酸 {0:0.###} mL · 碱 {1:0.###} mL
+neutralizer_rule,酸碱处理蛋白质等杂质，随后用滤芯过滤。\n按目标浓度选用，药料和试剂的杂质也会影响浓度。
+neutralizer_direct,只做假药：试剂按原料开关使用。\n需要提纯请选“正常制药”。
+defer_output_quantity,产出 {0} / 剩余 {1} 件
+defer_output_slider_help,拖动或滚轮选装药数量。\n“全部产出”装完本批余料。
+defer_output_releasing,还需产出 {0} 件
+missing_finisher_tank,成型机缺少容器\n双击装入空储水罐
+runtime_finisher_capacity,成型机容器需要更多空间\n换大罐或减少数量后重算
+runtime_residue_capacity,反应罐需要更多空间接收成型机余料\n取走余料、清理或换大罐
+residue_vessels,范围：反应罐、暂存罐、成型机容器。
+runtime_reaction_duration,反应时长异常\n请结束本批后重新计算
+diag_reagent_foreign,{0}在其他药物中\n请补单独试剂
+diag_foreign_reagent_detail,需要{0}：{1:0.###} mL；可用：{2:0.###} mL\n另有{3:0.###} mL含在其他药物中，已保留

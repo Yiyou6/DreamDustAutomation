@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GameManagedDir>$(MSBuildThisFileDirectory)..\..\Probably Stolen_Data\Managed</GameManagedDir>
+    <AssemblyName>DreamDustAutomation</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src\**\*.cs" />
+    <Reference Include="$(GameManagedDir)\*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

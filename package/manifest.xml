@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>dream_dust_automation</ID>
+  <Name>全自动制毒机-解放你的双手 / Fully Automatic Drug Lab - Free Your Hands</Name>
+  <Author>星港工坊</Author>
+  <ModVersion>0.3.61-beta</ModVersion>
+  <Description>七种药物，一仓投料。选浓度和数量，自动规划加工。产量、消耗遵循原版；过夜完成加热反应。公开测试版。 / Seven drugs, one input bin. Choose grade and quantity; the machine plans and processes. Vanilla yield and costs; reactions finish overnight. Public beta.</Description>
+  <Assemblies><Assembly>DreamDustAutomation.dll</Assembly></Assemblies>
+  <Capabilities />
+</Manifest>
